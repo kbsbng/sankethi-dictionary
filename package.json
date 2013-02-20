@@ -1,0 +1,21 @@
+{
+    "name": "sankethidictionary",
+    "description": "Sankethi dictionary",
+    "version": "0.0.1",
+    "author": {
+        "name": "Keshavaprasad B S",
+        "email": "kbsbng@yahoo.com"
+    },
+    "contributors": [
+          {
+              "name": "Keshavaprasad B S",
+              "email": "kbsbng@yahoo.com"
+          }
+    ],
+    "dependencies": {
+        "mojito": "0.5.x"
+    },
+    "engines": {
+        "node": ">0.6"
+    }
+}

@@ -1,0 +1,17 @@
+---
+applications:
+  .:
+    name: Sankethi Dictionary
+    framework:
+      name: node
+      info:
+        mem: 64M
+        description: Node.js Application
+        exec: 
+    infra: ap-aws
+    url: sankethidictionary.ap01.aws.af.cm
+    mem: 128M
+    instances: 1
+    services:
+      dictionary:
+        type: mongodb

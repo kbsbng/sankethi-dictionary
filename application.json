@@ -1,0 +1,23 @@
+[
+    {
+        "settings": [ "master" ],
+        "appPort": "80",
+        "specs": {
+            "searchpage" : {
+                "type" : "HTMLFrameMojit",
+                "config" : {
+                    "title" : "Sankethi Dictionary",
+                    "child" : {
+                        "type" : "SearchPage"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "settings": [ "environment:development" ],
+        "staticHandling": {
+            "forceUpdate": true
+        }
+    }
+]

@@ -1,0 +1,9 @@
+[{
+    "settings": [ "master" ],
+    "search" : {
+        "verbs" : ["get"],
+        "path" : "/search",
+        "call" : "searchpage.index"
+    }
+
+}]
