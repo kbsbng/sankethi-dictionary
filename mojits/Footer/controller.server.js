@@ -1,11 +1,11 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('Footer', function(Y, NAME) {
+YUI.add('Footer', function (Y, NAME) {
 
-/**
- * The Footer module.
- *
- * @module Footer
- */
+    /**
+     * The Footer module.
+     *
+     * @module Footer
+     */
 
     /**
      * Constructor for the Controller class.
@@ -21,18 +21,9 @@ YUI.add('Footer', function(Y, NAME) {
          * @param ac {Object} The ActionContext that provides access
          *        to the Mojito API.
          */
-        index: function(ac) {
-            ac.models.get('FooterModelFoo').getData(function(err, data) {
-                if (err) {
-                    ac.error(err);
-                    return;
-                }
-                ac.assets.addCss('./index.css');
-                ac.done({
-                    status: 'Mojito is working.',
-                    data: data
-                });
-            });
+        index: function (ac) {
+            ac.assets.addCss('./index.css');
+            ac.done({});
         }
 
     };
