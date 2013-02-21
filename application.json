@@ -2,13 +2,29 @@
     {
         "settings": [ "master" ],
         "appPort": "80",
+        "middleware": [ "middleware/bodyParser.js",
+            "middleware/cookieParser.js",
+            "middleware/session.js",
+            "middleware/auth.js",
+            "middleware/verifyAuth.js" ],
         "specs": {
-            "searchpage" : {
-                "type" : "HTMLFrameMojit",
-                "config" : {
-                    "title" : "Sankethi Dictionary",
-                    "child" : {
-                        "type" : "SearchPage"
+            "searchPage": {
+                "type": "HTMLFrameMojit",
+                "config": {
+                    "deploy": true,
+                    "title": "Sankethi Dictionary - Search Page",
+                    "config": {
+                        "children": {
+                            "header": {
+                                "type": "Header"
+                            },
+                            "search": {
+                                "type": "Search"
+                            },
+                            "header": {
+                                "type": "Footer"
+                            }
+                        }
                     }
                 }
             }
