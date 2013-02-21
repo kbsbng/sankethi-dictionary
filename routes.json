@@ -1,5 +1,10 @@
 [{
     "settings": [ "master" ],
+    "login" : {
+        "verbs" : ["get", "post"],
+        "path" : "/login",
+        "call" : "login.index"
+    },
     "search" : {
         "verbs" : ["get"],
         "path" : "/search",

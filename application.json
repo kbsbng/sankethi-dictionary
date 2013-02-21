@@ -8,6 +8,26 @@
             "middleware/auth.js",
             "middleware/verifyAuth.js" ],
         "specs": {
+            "login" : {
+                "type" : "HTMLFrameMojit",
+                "config" : {
+                    "deploy" : true,
+                    "title" : "Sankethi Dictionary - Login Page",
+                    "config" : {
+                        "children" : {
+                            "header" : {
+                                "type" : "Header"
+                            },
+                            "login" : {
+                                "type" : "Login"
+                            },
+                            "footer" : {
+                                "type" : "Footer"
+                            }
+                        }
+                    }
+                }
+            },
             "searchPage": {
                 "type": "HTMLFrameMojit",
                 "config": {
