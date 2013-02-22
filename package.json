@@ -19,6 +19,6 @@
         "mongoskin" : "0.4.x"
     },
     "engines": {
-        "node": "=0.6"
+        "node": "0.6.x"
     }
 }
