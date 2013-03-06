@@ -7,8 +7,12 @@
     },
     "search" : {
         "verbs" : ["get"],
-        "path" : ["/search", "/"],
+        "path" : "/search",
+        "call" : "searchPage.index"
+    },
+    "home" : {
+        "verbs" : ["get"],
+        "path" : "/",
         "call" : "searchPage.index"
     }
-
 }]
