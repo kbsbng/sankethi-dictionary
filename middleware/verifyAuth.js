@@ -2,34 +2,36 @@ var url = require("url");
 var nonLoginPaths = {
     "/login": true,
     "/favicon.ico": true,
-    "/search" : true
+    "/search": true,
+    "/": true
 };
 
 var nonLoginPatterns = ['^/combo~', '^/static', '^/login', '^/search($|/)'];
 //noinspection FunctionWithInconsistentReturnsJS
-module.exports = function(req, res, next) {
-    if (process.env.ENV == "dev") {
+module.exports = function (req, res, next) {
+    "use strict";
+    if (process.env.ENV === "dev") {
         return next();
     }
-    var i;
-    console.log("Url: "+ req.url);
+    var i, urlp;
+    console.log("Url: " + req.url);
     if (nonLoginPaths[req.url]) {
         return next();
     }
-    for (i = 0; i < nonLoginPatterns.length; i++) {
+    for (i = 0; i < nonLoginPatterns.length; i = i + 1) {
         if (req.url.match(nonLoginPatterns[i])) {
             return next();
         }
     }
-    var urlp= url.parse(req.originalUrl, true);
+    urlp = url.parse(req.originalUrl, true);
     if (urlp.query.login_with) {
-        req.authenticate([urlp.query.login_with], function(error, authenticated) {
+        req.authenticate([urlp.query.login_with], function (error, authenticated) {
             if (error) {
                 console.error(error);
                 res.end("Error: " + error);
                 return;
             }
-            if(authenticated) {
+            if (authenticated) {
                 res.writeHead(303, { 'Location': urlp.query['orig-url'] });
                 res.end('Redirecting');
                 //res.send("<html><h1>Hello Google user:" + JSON.stringify( req.getAuthDetails() ) + ".</h1></html>");
@@ -41,14 +43,14 @@ module.exports = function(req, res, next) {
         return;
     }
 
-    if (req.url == "/logout") {
+    if (req.url === "/logout") {
         req.logout();
         res.writeHead(303, { 'Location': "/" });
         res.end('');
         return;
     }
 
-    if( !req.isAuthenticated() ) {
+    if (!req.isAuthenticated()) {
         console.log("Not authenticated");
         res.writeHead(303, { 'Location': "/login?orig-url=" + req.url });
         res.end('Redirecting to login page');

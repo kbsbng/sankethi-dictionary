@@ -7,7 +7,7 @@
     },
     "search" : {
         "verbs" : ["get"],
-        "path" : "/search",
+        "path" : ["/search", "/"],
         "call" : "searchPage.index"
     }
 
