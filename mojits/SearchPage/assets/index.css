@@ -1,2 +1,12 @@
-dt { font-weight: bold; }
-.sel { background-color: #FF4; }
+dt {
+    font-weight: bold;
+}
+
+.sel {
+    background-color: #FF4;
+}
+
+.game-list-page-body {
+    vertical-align: middle;
+    text-align: center;
+}
