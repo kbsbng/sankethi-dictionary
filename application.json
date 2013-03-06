@@ -8,21 +8,24 @@
             "middleware/auth.js",
             "middleware/verifyAuth.js" ],
         "specs": {
-            "login" : {
-                "type" : "HTMLFrameMojit",
-                "config" : {
-                    "deploy" : true,
-                    "title" : "Sankethi Dictionary - Login Page",
-                    "config" : {
-                        "children" : {
-                            "header" : {
-                                "type" : "Header"
-                            },
-                            "login" : {
-                                "type" : "Login"
-                            },
-                            "footer" : {
-                                "type" : "Footer"
+            "login": {
+                "type": "HTMLFrameMojit",
+                "config": {
+                    "deploy": true,
+                    "title": "Sankethi Dictionary - Login Page",
+                    "child": {
+                        "type": "LoginFrame",
+                        "config": {
+                            "children": {
+                                "header": {
+                                    "type": "Header"
+                                },
+                                "login": {
+                                    "type": "Login"
+                                },
+                                "footer": {
+                                    "type": "Footer"
+                                }
                             }
                         }
                     }
@@ -33,16 +36,19 @@
                 "config": {
                     "deploy": true,
                     "title": "Sankethi Dictionary - Search Page",
-                    "config": {
-                        "children": {
-                            "header": {
-                                "type": "Header"
-                            },
-                            "search": {
-                                "type": "Search"
-                            },
-                            "header": {
-                                "type": "Footer"
+                    "child": {
+                        "type": "SearchPage",
+                        "config": {
+                            "children": {
+                                "header": {
+                                    "type": "Header"
+                                },
+                                "search": {
+                                    "type": "Search"
+                                },
+                                "footer": {
+                                    "type": "Footer"
+                                }
                             }
                         }
                     }
