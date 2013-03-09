@@ -51,6 +51,13 @@
                                 }
                             }
                         }
+                    },
+                    "assets" : {
+                        "bottom" : {
+                            "js" : ["/static/sankethidictionary/assets/js/pramukhime.js",
+                                "/static/sankethidictionary/assets/js/pramukhindic.js",
+                                "/static/sankethidictionary/assets/js/pramukhime-common.js"]
+                        }
                     }
                 }
             }

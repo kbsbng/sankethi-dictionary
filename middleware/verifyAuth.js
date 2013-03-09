@@ -6,7 +6,7 @@ var nonLoginPaths = {
     "/": true
 };
 
-var nonLoginPatterns = ['^/combo~', '^/static', '^/login', '^/search($|/)'];
+var nonLoginPatterns = ['^/combo~', '^/static', '^/login', '^/search($|/)', '\.js$'];
 //noinspection FunctionWithInconsistentReturnsJS
 module.exports = function (req, res, next) {
     "use strict";
