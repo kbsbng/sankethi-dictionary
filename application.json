@@ -7,6 +7,12 @@
             "middleware/session.js",
             "middleware/auth.js",
             "middleware/verifyAuth.js" ],
+        "yui": {
+            "config": {
+                "debug": true,
+                "logLevel": "debug"
+            }
+        },
         "specs": {
             "login": {
                 "type": "HTMLFrameMojit",
@@ -14,7 +20,7 @@
                     "deploy": true,
                     "title": "Sankethi Dictionary - Login Page",
                     "child": {
-                        "type": "LoginFrame",
+                        "type": "LoginPage",
                         "config": {
                             "children": {
                                 "header": {

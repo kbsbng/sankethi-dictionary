@@ -1,2 +1,25 @@
-dt { font-weight: bold; }
-.sel { background-color: #FF4; }
+dt {
+    font-weight: bold;
+}
+
+.sel {
+    background-color: #FF4;
+}
+
+#header-bar {
+    background-color: #00008b;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#header-bar .user-name {
+    text-align: right;
+    color: #ffffff;
+    padding-right: 5px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
