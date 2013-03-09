@@ -1,4 +1,6 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
+/*global PramukhIndic*/
+/*global pramukhIME*/
 YUI.add('SearchPageBinderIndex', function(Y, NAME) {
 
 /**
@@ -32,6 +34,10 @@ YUI.add('SearchPageBinderIndex', function(Y, NAME) {
         bind: function(node) {
             var me = this;
             this.node = node;
+            window.onload = function() {
+                pramukhIME.addLanguage(PramukhIndic, "kannada");
+                pramukhIME.enable();
+            };
             /**
              * Example code for the bind method:
              *
