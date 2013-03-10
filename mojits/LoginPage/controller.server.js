@@ -22,6 +22,7 @@ YUI.add('LoginPage', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
+            ac.assets.addCss('./index.css');
             ac.composite.done();
         }
 
