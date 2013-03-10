@@ -1,12 +1,15 @@
 <div id="{{mojit_view_id}}">
     <div id="header-bar">
-        <div class="user-name">
+        <span class="add-word">
+            <a href="/addword">Add word</a>
+        </span>
+        <span class="user-name">
             {{#if user}}
                 {{user.name}}
             {{else}}
                 <a href="/login">Login</a>
             {{/if}}
-        </div>
+        </span>
     </div>
     <h1>ಸಂಕೇತಿ ನಿಘಂಟು</h1>
 </div>

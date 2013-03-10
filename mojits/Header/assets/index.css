@@ -11,15 +11,21 @@ dt {
     width: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
+    text-align: right;
 }
 
-#header-bar .user-name, #header-bar .user-name a {
-    text-align: right;
-    color: #ffffff;
+#header-bar .user-name {
     padding-right: 5px;
+    color: #ffffff;
+}
+
+#header-bar .add-word a, #header-bar .user-name a {
+    font-weight: bold;
+    color: #ffffff;
 }
 
 body {
     padding: 0;
     margin: 0;
 }
+
