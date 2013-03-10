@@ -26,10 +26,16 @@ YUI.add('AddWord', function (Y, NAME) {
             ac.done({});
         },
         addword: function(ac) {
-            console.log(ac.params.getFromBody());
-            ac.done("Success");
+            var word = JSON.parse(ac.params.getFromBody().newWord),
+                model = ac.models.get('DictionaryModel');
+            console.log(word);
+            model.addWord(word, function() {
+                ac.done("Success");
+            }, function(err) {
+                ac.error(err);
+            });
         }
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'mojito-params-addon']});
+}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'mojito-params-addon', "DictionaryModel"]});
