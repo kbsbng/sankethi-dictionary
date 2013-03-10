@@ -1,0 +1,83 @@
+<div id="{{mojit_view_id}}">
+    <form action="/addword" method="POST">
+        <label for="new-word">Word</label>
+        <input name="new-word" id="new-word"/>
+        <fieldset>
+            <legend>Type</legend>
+            <input type="radio" id="new-word-type-noun" name="new-word-type" value="noun"/>
+            <label for="new-word-type-noun">Noun</label>
+            <input type="radio" id="new-word-type-verb" name="new-word-type" value="verb"/>
+            <label for="new-word-type-verb">Verb</label>
+            <input type="radio" id="new-word-type-adjective" name="new-word-type" value="adjective"/>
+            <label for="new-word-type-adjective">Adjective</label>
+            <input type="radio" id="new-word-type-pronoun" name="new-word-type" value="pronoun"/>
+            <label for="new-word-type-pronoun">Pronoun</label>
+        </fieldset>
+        <table id="noun-variations">
+            <caption>Variations</caption>
+            <tr>
+                <th>ವಿಭಕ್ತಿ</th>
+                <th>ಏಕ ವಚನ</th>
+                <th>ಬಹು ವಚನ</th>
+            </tr>
+            <tr>
+                <th>ಪ್ರಥಮ</th>
+                <td><input/></td>
+                <td><input/></td>
+            </tr>
+            <tr>
+                <th>ದ್ವಿತೇಯ</th>
+                <td><input/></td>
+                <td><input/></td>
+            </tr>
+            <tr>
+                <th>ತ್ರಿತೀಯ</th>
+                <td><input/></td>
+                <td><input/></td>
+            </tr>
+            <tr>
+                <th>ಚತುರ್ಥಿ</th>
+                <td><input/></td>
+                <td><input/></td>
+            </tr>
+            <tr>
+                <th>ಪಂಚಮಿ</th>
+                <td><input/></td>
+                <td><input/></td>
+            </tr>
+            <tr>
+                <th>ಷಷ್ಠಿ</th>
+                <td><input/></td>
+                <td><input/></td>
+            </tr>
+            <tr>
+                <th>ಸಪ್ತಮಿ</th>
+                <td><input/></td>
+                <td><input/></td>
+            </tr>
+        </table>
+        <table id="verb-variations">
+            <caption>Variations</caption>
+            <tr>
+                <th>ಪುರುಷ</th>
+                <th>ಏಕ ವಚನ</th>
+                <th>ಬಹು ವಚನ</th>
+            </tr>
+            <tr>
+                <th>ಪ್ರಥಮ</th>
+                <td><input/></td>
+                <td><input/></td>
+            </tr>
+            <tr>
+                <th>ಮಧ್ಯಮ</th>
+                <td><input/></td>
+                <td><input/></td>
+            </tr>
+            <tr>
+                <th>ಉತ್ತಮ</th>
+                <td><input/></td>
+                <td><input/></td>
+            </tr>
+        </table>
+    </form>
+</div>

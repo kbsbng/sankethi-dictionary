@@ -14,5 +14,15 @@
         "verbs" : ["get"],
         "path" : "/",
         "call" : "searchPage.index"
+    },
+    "addwordform" : {
+        "verbs" : ["get"],
+        "path" : "/addwordform",
+        "call" : "addWordPage.index"
+    },
+    "addword" : {
+        "verbs" : ["post"],
+        "path" : "/addword",
+        "call" : "addWordPage.addword"
     }
 }]

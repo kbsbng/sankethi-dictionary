@@ -65,6 +65,35 @@
                         }
                     }
                 }
+            },
+            "addWordPage" : {
+                "type": "HTMLFrameMojit",
+                "config": {
+                    "deploy": true,
+                    "title": "Sankethi Dictionary - Add Word Page",
+                    "child": {
+                        "type": "AddWordPage",
+                        "config": {
+                            "children": {
+                                "header": {
+                                    "type": "Header"
+                                },
+                                "addWord": {
+                                    "type": "AddWord"
+                                },
+                                "footer": {
+                                    "type": "Footer"
+                                }
+                            }
+                        }
+                    },
+                    "assets" : {
+                        "bottom" : {
+                            "js" : ["/static/sankethidictionary/assets/js/pramukhime.js",
+                                "/static/sankethidictionary/assets/js/pramukhindic.js"]
+                        }
+                    }
+                }
             }
         }
     },
