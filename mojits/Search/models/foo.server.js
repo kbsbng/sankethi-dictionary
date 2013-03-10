@@ -1,6 +1,10 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('SearchModelFoo', function(Y, NAME) {
-
+YUI.add('DictionaryModel', function(Y, NAME) {
+    var mongo, db;
+    mongo = require('mongoskin');
+    db = mongo.db(process.env.MONGOHQ_URL, {
+        safe: true
+    });
 /**
  * The SearchModelFoo module.
  *

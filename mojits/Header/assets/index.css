@@ -13,7 +13,7 @@ dt {
     padding-bottom: 5px;
 }
 
-#header-bar .user-name {
+#header-bar .user-name, #header-bar .user-name a {
     text-align: right;
     color: #ffffff;
     padding-right: 5px;
