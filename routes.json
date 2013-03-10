@@ -23,6 +23,6 @@
     "addword" : {
         "verbs" : ["post"],
         "path" : "/addword",
-        "call" : "addWordPage.addword"
+        "call" : "addWordResult.addword"
     }
 }]

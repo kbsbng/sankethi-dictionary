@@ -24,8 +24,12 @@ YUI.add('AddWord', function (Y, NAME) {
         index: function (ac) {
             ac.assets.addCss('./index.css');
             ac.done({});
+        },
+        addword: function(ac) {
+            console.log(ac.params.getFromBody());
+            ac.done("Success");
         }
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'AddWordModelFoo']});
+}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'mojito-params-addon']});

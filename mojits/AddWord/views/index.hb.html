@@ -2,6 +2,8 @@
     <form action="/addword" method="POST">
         <label for="new-word">Word</label>
         <input name="new-word" id="new-word"/>
+        <label for="new-word-meaning">Word</label>
+        <input name="new-word-meaning" id="new-word-meaning"/>
         <fieldset>
             <legend>Type</legend>
             <input type="radio" id="new-word-type-noun" name="new-word-type" value="noun" checked="true" />
@@ -79,5 +81,6 @@
                 <td><input/></td>
             </tr>
         </table>
+        <input type="button" value="Add word" id="add-word-button" />
     </form>
 </div>

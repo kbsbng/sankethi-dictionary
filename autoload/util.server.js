@@ -15,8 +15,8 @@ YUI.add('sankethi-dictionary-util', function (Y) {
         getUserObj: function (ac) {
             if (process.env.ENV === "dev") {
                 //noinspection JSLint
-                var user = fs.readFileSync("./userData.txt").toString();
-                return mockUserData[user];
+                //var user = fs.readFileSync("./userData.txt").toString();
+                return mockUserData["1"];
             }
             //noinspection JSLint
             return ac._adapter.req.getAuthDetails().user;

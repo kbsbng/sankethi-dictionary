@@ -1,11 +1,13 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('AddWordBinderIndex', function(Y, NAME) {
+/*global pramukhIME*/
+/*global PramukhIndic*/
+YUI.add('AddWordBinderIndex', function (Y, NAME) {
 
-/**
- * The AddWordBinderIndex module.
- *
- * @module AddWordBinderIndex
- */
+    /**
+     * The AddWordBinderIndex module.
+     *
+     * @module AddWordBinderIndex
+     */
 
     /**
      * Constructor for the AddWordBinderIndex class.
@@ -19,7 +21,7 @@ YUI.add('AddWordBinderIndex', function(Y, NAME) {
          * Binder initialization method, invoked after all binders on the page
          * have been constructed.
          */
-        init: function(mojitProxy) {
+        init: function (mojitProxy) {
             this.mojitProxy = mojitProxy;
         },
 
@@ -29,10 +31,10 @@ YUI.add('AddWordBinderIndex', function(Y, NAME) {
          *
          * @param node {Node} The DOM node to which this mojit is attached.
          */
-        bind: function(node) {
+        bind: function (node) {
             var me = this;
             this.node = node;
-            node.all('input[name="new-word-type"]').on('click', function(e) {
+            node.all('input[name="new-word-type"]').on('click', function (e) {
                 var type = e.target.get('value');
                 if (type === "noun" || type === "pronoun") {
                     node.one("#verb-variations").setStyle("display", "none");
@@ -46,9 +48,21 @@ YUI.add('AddWordBinderIndex', function(Y, NAME) {
                 }
                 node.one("#verb-variations").setStyle("display", "none");
                 node.one("#noun-variations").setStyle("display", "none");
-                return;
             });
-            window.onload = function() {
+            node.one("#add-word-button").on("click", function (e) {
+                Y.io("/addword", {
+                    "method": "POST",
+                    "headers": "application/json",
+                    "data": {
+                        "newWord": JSON.stringify({
+                            "word": node.one("#new-word").get("value"),
+                            "type": node.one('input[name="new-word-type"]:checked').get("value"),
+                            "meaning": node.one('#new-word-meaning').get("value")
+                        })
+                    }
+                });
+            });
+            window.onload = function () {
                 pramukhIME.addLanguage(PramukhIndic, "kannada");
                 pramukhIME.enable();
             };
@@ -71,4 +85,4 @@ YUI.add('AddWordBinderIndex', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client']});
+}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client', "io-base"]});

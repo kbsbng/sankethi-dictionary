@@ -76,13 +76,15 @@
                         "config": {
                             "children": {
                                 "header": {
-                                    "type": "Header"
+                                    "type": "Header",
+                                    "action" : "index"
                                 },
                                 "addWord": {
                                     "type": "AddWord"
                                 },
                                 "footer": {
-                                    "type": "Footer"
+                                    "type": "Footer",
+                                    "action" : "index"
                                 }
                             }
                         }
@@ -94,6 +96,9 @@
                         }
                     }
                 }
+            },
+            "addWordResult" : {
+                "type": "AddWord"
             }
         }
     },
