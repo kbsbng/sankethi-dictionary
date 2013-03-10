@@ -32,6 +32,26 @@ YUI.add('AddWordBinderIndex', function(Y, NAME) {
         bind: function(node) {
             var me = this;
             this.node = node;
+            node.all('input[name="new-word-type"]').on('click', function(e) {
+                var type = e.target.get('value');
+                if (type === "noun" || type === "pronoun") {
+                    node.one("#verb-variations").setStyle("display", "none");
+                    node.one("#noun-variations").setStyle("display", "block");
+                    return;
+                }
+                if (type === "verb") {
+                    node.one("#noun-variations").setStyle("display", "none");
+                    node.one("#verb-variations").setStyle("display", "block");
+                    return;
+                }
+                node.one("#verb-variations").setStyle("display", "none");
+                node.one("#noun-variations").setStyle("display", "none");
+                return;
+            });
+            window.onload = function() {
+                pramukhIME.addLanguage(PramukhIndic, "kannada");
+                pramukhIME.enable();
+            };
             /**
              * Example code for the bind method:
              *
