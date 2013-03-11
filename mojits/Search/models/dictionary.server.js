@@ -24,16 +24,6 @@ YUI.add('DictionaryModel', function (Y, NAME) {
             this.config = config;
         },
 
-        /**
-         * Method that will be invoked by the mojit controller to obtain data.
-         *
-         * @param callback {function(err,data)} The callback function to call when the
-         *        data has been retrieved.
-         */
-        getData: function (callback) {
-            callback(null, { some: 'data' });
-        },
-
         addWord: function (word, successCb, failureCb) {
             dictionary.update(
                 {
@@ -57,6 +47,10 @@ YUI.add('DictionaryModel', function (Y, NAME) {
                     successCb(result);
                 }
             );
+        },
+
+        searchWord: function(word, successCb, failureCb) {
+
         }
 
     };

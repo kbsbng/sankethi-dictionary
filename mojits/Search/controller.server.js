@@ -1,11 +1,11 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('Search', function(Y, NAME) {
+YUI.add('Search', function (Y, NAME) {
 
-/**
- * The Search module.
- *
- * @module Search
- */
+    /**
+     * The Search module.
+     *
+     * @module Search
+     */
 
     /**
      * Constructor for the Controller class.
@@ -21,17 +21,18 @@ YUI.add('Search', function(Y, NAME) {
          * @param ac {Object} The ActionContext that provides access
          *        to the Mojito API.
          */
-        index: function(ac) {
-            ac.models.get('DictionaryModel').getData(function(err, data) {
-                if (err) {
-                    ac.error(err);
-                    return;
-                }
-                ac.assets.addCss('./index.css');
-                ac.done({
-                    status: 'Mojito is working.',
-                    data: data
-                });
+        index: function (ac) {
+            ac.assets.addCss('./index.css');
+            ac.done({});
+        },
+        search: function (ac) {
+            var word, model;
+            word = ac.params.get("key");
+            model = ac.models.get('DictionaryModel');
+            model.searchWord(word, function(result) {
+
+            }, function(err) {
+
             });
         }
 
