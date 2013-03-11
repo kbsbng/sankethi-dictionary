@@ -1,6 +1,6 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
 YUI.add('AddWord', function (Y, NAME) {
-
+    var utils = Y.mojito.sankethiDictionaryUtils;
     /**
      * The AddWord module.
      *
@@ -28,6 +28,7 @@ YUI.add('AddWord', function (Y, NAME) {
         addword: function(ac) {
             var word = JSON.parse(ac.params.getFromBody().newWord),
                 model = ac.models.get('DictionaryModel');
+            word.entry.authors = [ utils.getUserEmail(ac) ];
             console.log(word);
             model.addWord(word, function() {
                 ac.done("Success");
