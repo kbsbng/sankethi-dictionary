@@ -50,7 +50,15 @@ YUI.add('DictionaryModel', function (Y, NAME) {
         },
 
         searchWord: function(word, successCb, failureCb) {
-
+            dictionary.findOne({
+                "_id" : word
+            }, function(err, word) {
+                if (err) {
+                    failureCb(err);
+                    return;
+                }
+                successCb(word);
+            });
         }
 
     };

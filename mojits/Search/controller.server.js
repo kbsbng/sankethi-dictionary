@@ -30,7 +30,7 @@ YUI.add('Search', function (Y, NAME) {
             word = ac.params.get("key");
             model = ac.models.get('DictionaryModel');
             model.searchWord(word, function(result) {
-
+                ac.done(result);
             }, function(err) {
 
             });
