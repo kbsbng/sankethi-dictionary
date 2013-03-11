@@ -15,14 +15,14 @@
         "path" : "/",
         "call" : "searchPage.index"
     },
-    "addwordform" : {
+    "addWordForm" : {
         "verbs" : ["get"],
         "path" : "/addwordform",
         "call" : "addWordPage.index"
     },
-    "addword" : {
+    "addWord" : {
         "verbs" : ["post"],
         "path" : "/addword",
-        "call" : "addWordResult.addword"
+        "call" : "addWordResult.addWord"
     }
 }]

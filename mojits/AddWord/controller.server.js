@@ -25,7 +25,7 @@ YUI.add('AddWord', function (Y, NAME) {
             ac.assets.addCss('./index.css');
             ac.done({});
         },
-        addword: function(ac) {
+        addWord: function(ac) {
             var word = JSON.parse(ac.params.getFromBody().newWord),
                 model = ac.models.get('DictionaryModel');
             word.entry.authors = [ utils.getUserEmail(ac) ];
@@ -39,4 +39,4 @@ YUI.add('AddWord', function (Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'mojito-params-addon', "DictionaryModel"]});
+}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'mojito-params-addon', "DictionaryModel", "sankethi-dictionary-util"]});
