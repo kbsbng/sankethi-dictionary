@@ -1,5 +1,7 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
 YUI.add('Search', function (Y, NAME) {
+    var utils;
+    utils = Y.mojito.sankethiDictionaryUtils;
 
     /**
      * The Search module.
@@ -22,6 +24,9 @@ YUI.add('Search', function (Y, NAME) {
          *        to the Mojito API.
          */
         index: function (ac) {
+            var usersModel;
+            usersModel = ac.models.get("UsersModel");
+            usersModel.ensureUserExists({name : utils.getUserName(ac), email : utils.getUserEmail(ac)});
             ac.assets.addCss('./index.css');
             ac.done({});
         },
@@ -30,6 +35,7 @@ YUI.add('Search', function (Y, NAME) {
             word = ac.params.get("key");
             model = ac.models.get('DictionaryModel');
             model.searchWord(word, function(result) {
+                Y.log("debug", result);
                 ac.done(result);
             }, function(err) {
 
@@ -38,4 +44,4 @@ YUI.add('Search', function (Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'DictionaryModel']});
+}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'DictionaryModel', "UsersModel"]});

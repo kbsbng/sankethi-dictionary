@@ -32,6 +32,16 @@ YUI.add('SearchBinderIndex', function(Y, NAME) {
         bind: function(node) {
             var me = this;
             this.node = node;
+
+            node.one("#submit-button").on("click", function(e) {
+                me.mojitProxy.invoke("search", {
+                    params : {
+                        key : node.one("input[name='key']").get("value")
+                    }
+                }, function(markup) {
+                    node.one("#search-result").set("innerHTML", markup);
+                });
+            });
             /**
              * Example code for the bind method:
              *

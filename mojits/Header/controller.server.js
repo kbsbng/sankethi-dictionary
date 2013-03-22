@@ -24,6 +24,7 @@ YUI.add('Header', function(Y, NAME) {
         index: function(ac) {
             ac.assets.addCss('./index.css');
             Y.log(utils.getUserObj(ac), "debug", NAME);
+
             ac.done({
                 user : utils.getUserObj(ac)
             });

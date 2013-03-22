@@ -1,11 +1,7 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
 YUI.add('DictionaryModel', function (Y, NAME) {
-    var mongo, db, dictionary;
-    mongo = require('mongoskin');
-    db = mongo.db(process.env.MONGOHQ_URL, {
-        safe: true
-    });
-    dictionary = db.collection("dictionary");
+    var mongo;
+    mongo = Y.mojito.sankethiDictionaryMongo;
     /**
      * The SearchModelFoo module.
      *
@@ -25,7 +21,7 @@ YUI.add('DictionaryModel', function (Y, NAME) {
         },
 
         addWord: function (word, successCb, failureCb) {
-            dictionary.update(
+            mongo.dictionary.update(
                 {
                     "_id": word.word
                 },
@@ -50,7 +46,7 @@ YUI.add('DictionaryModel', function (Y, NAME) {
         },
 
         searchWord: function(word, successCb, failureCb) {
-            dictionary.findOne({
+            mongo.dictionary.findOne({
                 "_id" : word
             }, function(err, word) {
                 if (err) {
@@ -63,4 +59,4 @@ YUI.add('DictionaryModel', function (Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: []});
+}, '0.0.1', {requires: ["sankethi-dictionary-mongo"]});
