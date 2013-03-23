@@ -97,6 +97,29 @@
                     }
                 }
             },
+            "displayWordPage" : {
+                "type": "HTMLFrameMojit",
+                "config": {
+                    "deploy": true,
+                    "title": "Sankethi Dictionary",
+                    "child": {
+                        "type": "DisplayWordPage",
+                        "config": {
+                            "children": {
+                                "header": {
+                                    "type": "Header"
+                                },
+                                "addWord": {
+                                    "type": "DisplayWord"
+                                },
+                                "footer": {
+                                    "type": "Footer"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "addWordResult" : {
                 "type": "AddWord"
             }

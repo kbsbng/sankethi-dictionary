@@ -16,7 +16,8 @@
         "mojito": "0.5.x",
         "connect-auth" : "0.5.x",
         "connect" : "2.7.x",
-        "mongoskin" : "0.5.x"
+        "mongoskin" : "0.5.x",
+        "jade" : "0.28  .x"
     },
     "engines": {
         "node": "0.8.x"

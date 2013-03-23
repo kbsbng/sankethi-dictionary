@@ -24,5 +24,10 @@
         "verbs" : ["post"],
         "path" : "/addword",
         "call" : "addWordResult.addWord"
+    },
+    "displayWord" : {
+        "verbs" : ["get"],
+        "path" : "/word",
+        "call" : "displayWordPage.index"
     }
 }]

@@ -1,0 +1,16 @@
+div(id=meta.id)
+    h1 #{word}
+    div #{entry.type}
+    div #{entry.meaning}
+    table(class="variations")
+        caption Variations
+        tr
+            th ವಿಭಕ್ತಿ
+            th ಏಕ ವಚನ
+            th ಬಹು ವಚನ
+        - vibhaktis = ["ಪ್ರಥಮ", "ದ್ವಿತೇಯ", "ತ್ರಿತೀಯ", "ಚತುರ್ಥಿ", "ಪಂಚಮಿ", "ಷಷ್ಠಿ", "ಸಪ್ತಮಿ"]
+        each variation, i in entry.variations
+            tr
+                th #{vibhaktis[i]}
+                td #{variation[0]}
+                td #{variation[1]}
