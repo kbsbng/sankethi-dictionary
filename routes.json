@@ -10,20 +10,10 @@
         "path" : "/search",
         "call" : "searchPage.index"
     },
-    "searchAction" : {
-        "verbs" : ["get"],
-        "path" : "/search/?key:key",
-        "call" : "searchPage.search"
-    },
     "home" : {
         "verbs" : ["get"],
         "path" : "/",
         "call" : "searchPage.index"
-    },
-    "homeSearchAction" : {
-        "verbs" : ["get"],
-        "path" : "/?key:key",
-        "call" : "searchPage.search"
     },
     "addWordForm" : {
         "verbs" : ["get"],

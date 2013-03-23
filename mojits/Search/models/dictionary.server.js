@@ -48,12 +48,12 @@ YUI.add('DictionaryModel', function (Y, NAME) {
         searchWord: function(word, successCb, failureCb) {
             mongo.dictionary.findOne({
                 "_id" : word
-            }, function(err, word) {
+            }, function(err, wordResult) {
                 if (err) {
                     failureCb(err);
                     return;
                 }
-                successCb(word);
+                successCb(wordResult);
             });
         }
 

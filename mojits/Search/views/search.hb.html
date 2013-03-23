@@ -1,3 +1,22 @@
-<div id="{{mojit_view_id}}">
-
-</div>
+<table id="{{mojit_view_id}}">
+    {{#if matches}}
+        {{#each matches}}
+            <tr>
+                <th>Word</th>
+                <th>Type</th>
+                <th>Meaning</th>
+                <th>Authors</th>
+            </tr>
+            {{#each entries}}
+                <tr>
+                    <td>{{../_id}}</td>
+                    <td>{{type}}</td>
+                    <td>{{meaning}}</td>
+                    <td>{{#each authors}}{{this}}{{/each}}</td>
+                </tr>
+            {{/each}}
+        {{/each}}
+    {{else}}
+        No matches found.
+    {{/if}}
+</table>

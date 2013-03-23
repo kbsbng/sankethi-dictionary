@@ -34,11 +34,17 @@ YUI.add('SearchBinderIndex', function(Y, NAME) {
             this.node = node;
 
             node.one("#submit-button").on("click", function(e) {
+                console.log(node.one("input[name='key']").get("value"));
+                //console.log(me.mojitProxy);
                 me.mojitProxy.invoke("search", {
                     params : {
-                        key : node.one("input[name='key']").get("value")
+                        url : {
+                            key : node.one("input[name='key']").get("value")
+                        }
                     }
-                }, function(markup) {
+                }, function(error, markup) {
+                    console.log(markup);
+
                     node.one("#search-result").set("innerHTML", markup);
                 });
             });
@@ -61,4 +67,4 @@ YUI.add('SearchBinderIndex', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client']});
+}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client', 'io']});

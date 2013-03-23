@@ -32,16 +32,17 @@ YUI.add('Search', function (Y, NAME) {
         },
         search: function (ac) {
             var word, model;
-            word = ac.params.get("key");
+            word = ac.params.getFromMerged("key");
             model = ac.models.get('DictionaryModel');
+            Y.log("Searching for " + word, "debug");
             model.searchWord(word, function(result) {
-                Y.log("debug", result);
-                ac.done(result);
+                Y.log(result, "debug");
+                ac.done({matches : [result]});
             }, function(err) {
-
+                Y.log(err, "error", NAME);
             });
         }
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'DictionaryModel', "UsersModel"]});
+}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'DictionaryModel', "UsersModel", "mojito-params-addon"]});
