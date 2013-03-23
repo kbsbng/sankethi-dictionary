@@ -1,0 +1,18 @@
+table(id=meta.id)
+    if matches[0]
+        each match, i in matches
+            tr
+                th Word
+                th Type
+                th Meaning
+                th Authors
+            each entry, j in match.entries
+                tr
+                    td #{match._id}
+                    td #{entry.type}
+                    td #{entry.meaning}
+                    td
+                        each author in entry.authors
+                            | #{author}
+    else
+        | No matches found.
