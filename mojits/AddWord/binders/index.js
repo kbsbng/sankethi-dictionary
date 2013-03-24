@@ -83,6 +83,13 @@ YUI.add('AddWordBinderIndex', function (Y, NAME) {
                     "headers": "application/json",
                     "data": {
                         "newWord": JSON.stringify(word)
+                    },
+                    "on" : {
+                        "success" : function () {
+                            console.log("Done");
+                            node.one(".notification").set('innerHTML', "Added word " + word.word);
+                            node.one("form").reset();
+                        }
                     }
                 });
             });

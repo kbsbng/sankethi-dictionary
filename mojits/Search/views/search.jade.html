@@ -8,7 +8,8 @@ table(id=meta.id)
                 th Authors
             each entry, j in match.entries
                 tr
-                    td #{match._id}
+                    td
+                        a(href="/word?key="+encodeURIComponent(match._id)+"&entryIndex="+j) #{match._id}
                     td #{entry.type}
                     td #{entry.meaning}
                     td
