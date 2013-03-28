@@ -50,8 +50,16 @@ YUI.add('AddWordBinderIndex', function (Y, NAME) {
          * @param node {Node} The DOM node to which this mojit is attached.
          */
         bind: function (node) {
-            var me = this;
+            var me = this, meanings = 1;
             this.node = node;
+            node.one("#add-meaning").on('click', function () {
+                var newMeaning;
+                meanings += 1;
+                newMeaning = Y.Node.create('<label for="new-word-meaning-' + meanings + '">Meaning ' + meanings +
+                    '</label><input name="new-word-meaning-' + meanings + '" id="new-word-meaning-' + meanings +
+                    '" class="new-word-meanings"/>');
+                node.one("#meanings").insert(newMeaning, node.one("#add-meaning"));
+            });
             node.all('input[name="new-word-type"]').on('click', function (e) {
                 var type = e.target.get('value');
                 if (type === "noun" || type === "pronoun") {
@@ -74,18 +82,18 @@ YUI.add('AddWordBinderIndex', function (Y, NAME) {
                     "word": node.one("#new-word").get("value"),
                     "entry": {
                         "type": wordType,
-                        "meaning": node.one('#new-word-meaning').get("value")
+                        "meanings": node.all('.new-word-meanings').get("value")
                     }
                 };
                 Y.log(JSON.stringify(word), "info", NAME);
                 me.addVariations(node, word, wordType);
                 me.mojitProxy.invoke("addWord", {
-                    params : {
-                        body : {
-                            newWord : JSON.stringify(word)
+                    params: {
+                        body: {
+                            newWord: JSON.stringify(word)
                         }
                     }
-                }, function(error, markup) {
+                }, function (error, markup) {
                     console.log(markup);
 
                     node.one(".notification").set('innerHTML', "Added word " + word.word);

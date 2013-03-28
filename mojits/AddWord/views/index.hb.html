@@ -1,10 +1,8 @@
 <div id="{{mojit_view_id}}">
     <div class="notification"></div>
-    <form action="/addword" method="POST">
+    <form>
         <label for="new-word">Word</label>
         <input name="new-word" id="new-word"/>
-        <label for="new-word-meaning">Meaning</label>
-        <input name="new-word-meaning" id="new-word-meaning"/>
         <fieldset>
             <legend>Type</legend>
             <input type="radio" id="new-word-type-noun" name="new-word-type" value="noun" checked="true" />
@@ -15,6 +13,12 @@
             <label for="new-word-type-adjective">Adjective</label>
             <input type="radio" id="new-word-type-pronoun" name="new-word-type" value="pronoun"/>
             <label for="new-word-type-pronoun">Pronoun</label>
+        </fieldset>
+        <fieldset id="meanings">
+            <legend>Meanings</legend>
+            <label for="new-word-meaning-1">Meaning 1</label>
+            <input name="new-word-meaning-1" id="new-word-meaning-1" class="new-word-meanings"/>
+            <input type="button" id="add-meaning" value="Add another meaning" />
         </fieldset>
         <table id="noun-variations">
             <caption>Variations</caption>
