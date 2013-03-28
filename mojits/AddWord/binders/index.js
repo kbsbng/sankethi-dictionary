@@ -77,41 +77,25 @@ YUI.add('AddWordBinderIndex', function (Y, NAME) {
                         "meaning": node.one('#new-word-meaning').get("value")
                     }
                 };
+                Y.log(JSON.stringify(word), "info", NAME);
                 me.addVariations(node, word, wordType);
-                Y.io("/addword", {
-                    "method": "POST",
-                    "headers": "application/json",
-                    "data": {
-                        "newWord": JSON.stringify(word)
-                    },
-                    "on" : {
-                        "success" : function () {
-                            console.log("Done");
-                            node.one(".notification").set('innerHTML', "Added word " + word.word);
-                            node.one("form").reset();
+                me.mojitProxy.invoke("addWord", {
+                    params : {
+                        body : {
+                            newWord : JSON.stringify(word)
                         }
                     }
+                }, function(error, markup) {
+                    console.log(markup);
+
+                    node.one(".notification").set('innerHTML', "Added word " + word.word);
+                    node.one("form").reset();
                 });
             });
             window.onload = function () {
                 pramukhIME.addLanguage(PramukhIndic, "kannada");
                 pramukhIME.enable();
             };
-            /**
-             * Example code for the bind method:
-             *
-             * node.all('dt').on('mouseenter', function(evt) {
-             *   var dd = '#dd_' + evt.target.get('text');
-             *   me.node.one(dd).addClass('sel');
-             *
-             * });
-             * node.all('dt').on('mouseleave', function(evt) {
-             *   
-             *   var dd = '#dd_' + evt.target.get('text');
-             *   me.node.one(dd).removeClass('sel');
-             *
-             * });
-             */
         }
 
     };

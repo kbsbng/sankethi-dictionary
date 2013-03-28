@@ -26,7 +26,8 @@ YUI.add('AddWord', function (Y, NAME) {
             ac.done({});
         },
         addWord: function(ac) {
-            var word = JSON.parse(ac.params.getFromBody().newWord),
+            Y.log(ac.params.getFromBody("newWord"), "warn", NAME);
+            var word = JSON.parse(ac.params.getFromMerged("newWord")),
                 model = ac.models.get('DictionaryModel');
             word.entry.authors = [ utils.getUserEmail(ac) ];
             console.log(word);
