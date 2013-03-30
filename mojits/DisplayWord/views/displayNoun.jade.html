@@ -1,7 +1,10 @@
 div(id=meta.id)
     h1 #{word}
-    div #{entry.type}
-    div #{entry.meaning}
+    h2 Type
+    p #{entry.type}
+    h2 Meanings
+    for meaning in entry.meanings
+        p meaning
     table(class="variations")
         caption Variations
         tr
