@@ -1,8 +1,10 @@
 [
     {
         "settings": [ "master" ],
-        "appName" : "sankethidictionary",
         "appPort": "80",
+        "staticHandling": {
+            "appName" : "sankethidictionary"
+        },
         "middleware": [ "middleware/bodyParser.js",
             "middleware/cookieParser.js",
             "middleware/session.js",
