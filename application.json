@@ -58,15 +58,15 @@
                             }
                         }
                     },
-                    "assets" : {
-                        "bottom" : {
-                            "js" : ["/static/sankethidictionary/assets/js/pramukhime.js",
-                                "/static/sankethidictionary/assets/js/pramukhindic.js"]
+                    "assets": {
+                        "bottom": {
+                            "js": ["/assets/js/pramukhime.js",
+                                "/assets/js/pramukhindic.js"]
                         }
                     }
                 }
             },
-            "addWordPage" : {
+            "addWordPage": {
                 "type": "HTMLFrameMojit",
                 "config": {
                     "deploy": true,
@@ -77,27 +77,27 @@
                             "children": {
                                 "header": {
                                     "type": "Header",
-                                    "action" : "index"
+                                    "action": "index"
                                 },
                                 "addWord": {
                                     "type": "AddWord"
                                 },
                                 "footer": {
                                     "type": "Footer",
-                                    "action" : "index"
+                                    "action": "index"
                                 }
                             }
                         }
                     },
-                    "assets" : {
-                        "bottom" : {
-                            "js" : ["/static/sankethidictionary/assets/js/pramukhime.js",
-                                "/static/sankethidictionary/assets/js/pramukhindic.js"]
+                    "assets": {
+                        "bottom": {
+                            "js": ["/assets/js/pramukhime.js",
+                                "/assets/js/pramukhindic.js"]
                         }
                     }
                 }
             },
-            "displayWordPage" : {
+            "displayWordPage": {
                 "type": "HTMLFrameMojit",
                 "config": {
                     "deploy": true,
@@ -120,7 +120,7 @@
                     }
                 }
             },
-            "addWordResult" : {
+            "addWordResult": {
                 "type": "AddWord"
             }
         }
