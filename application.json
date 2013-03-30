@@ -1,6 +1,7 @@
 [
     {
         "settings": [ "master" ],
+        "appName" : "sankethidictionary",
         "appPort": "80",
         "middleware": [ "middleware/bodyParser.js",
             "middleware/cookieParser.js",
