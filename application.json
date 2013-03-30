@@ -63,8 +63,8 @@
                     },
                     "assets": {
                         "bottom": {
-                            "js": ["/assets/js/pramukhime.js",
-                                "/assets/js/pramukhindic.js"]
+                            "js": ["/static/sankethidictionary/assets/js/pramukhime.js",
+                                "/static/sankethidictionary/assets/js/pramukhindic.js"]
                         }
                     }
                 }
@@ -94,8 +94,8 @@
                     },
                     "assets": {
                         "bottom": {
-                            "js": ["/assets/js/pramukhime.js",
-                                "/assets/js/pramukhindic.js"]
+                            "js": ["/static/sankethidictionary/assets/js/pramukhime.js",
+                                "/static/sankethidictionary/assets/js/pramukhindic.js"]
                         }
                     }
                 }
