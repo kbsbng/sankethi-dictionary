@@ -20,6 +20,9 @@ YUI.add('sankethi-dictionary-util', function (Y) {
             }
             //noinspection JSLint
             return ac._adapter.req.getAuthDetails().user;
+        },
+        isUserLoggedIn: function (ac) {
+            return this.getUserObj(ac) !== undefined;
         }
     };
 }, '0.0.1', {

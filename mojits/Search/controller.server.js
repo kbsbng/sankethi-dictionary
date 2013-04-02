@@ -26,7 +26,9 @@ YUI.add('Search', function (Y, NAME) {
         index: function (ac) {
             var usersModel;
             usersModel = ac.models.get("UsersModel");
-            usersModel.ensureUserExists({name : utils.getUserName(ac), email : utils.getUserEmail(ac)});
+            if (utils.isUserLoggedIn(ac)) {
+                usersModel.ensureUserExists({name : utils.getUserName(ac), email : utils.getUserEmail(ac)});
+            }
             ac.assets.addCss('./index.css');
             ac.done({});
         },
