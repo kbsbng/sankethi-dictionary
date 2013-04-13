@@ -29,3 +29,33 @@ body {
     margin: 0;
 }
 
+#header-bar .menu {
+    position: relative;
+}
+
+#header-bar .submenu {
+    position: absolute;
+    top: 1.5em;
+    left: 0;
+    width: 100%;
+    text-align: left;
+}
+
+#header-bar .submenu a {
+    color: black;
+    text-decoration: none;
+}
+
+#header-bar .submenu {
+    display: none;
+    border: solid 1px black;
+}
+
+#header-bar .menu.on .submenu {
+    display: inline;
+}
+
+#header-bar .menu.on, #header-bar .menu:hover {
+    background: rgb(110, 110, 231);
+}
+

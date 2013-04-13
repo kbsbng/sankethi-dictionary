@@ -6,7 +6,19 @@ var nonLoginPaths = {
     "/": true
 };
 
-var nonLoginPatterns = ['^/combo~', '^/static', '^/login', '^/search($|/)', '\.js$'];
+var nonLoginPatterns = [
+    '^/combo~',
+    '^/static',
+    '^/login',
+    '^/search($|/)',
+    '\.js$',
+    '^/static/Search/.*',
+    '^/word\?.*'
+];
+
+var nonLoginTunnelTypes = {
+    Search : true
+};
 //noinspection FunctionWithInconsistentReturnsJS
 module.exports = function (req, res, next) {
     "use strict";
@@ -17,6 +29,11 @@ module.exports = function (req, res, next) {
     console.log("Url: " + req.url);
     if (nonLoginPaths[req.url]) {
         return next();
+    }
+    if (req.url === "/tunnel") {
+        if (nonLoginTunnelTypes[req.body.instance.type] === true) {
+            return next();
+        }
     }
     for (i = 0; i < nonLoginPatterns.length; i = i + 1) {
         if (req.url.match(nonLoginPatterns[i])) {

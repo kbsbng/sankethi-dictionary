@@ -3,9 +3,10 @@
         <span class="add-word">
             <a href="/addwordform">Add word</a>
         </span>
-        <span class="user-name">
+        <span class="user-name menu">
             {{#if user}}
                 {{user.name}}
+                <span class="submenu"><a href="/logout">Logout</a></span>
             {{else}}
                 <a href="/login">Login</a>
             {{/if}}

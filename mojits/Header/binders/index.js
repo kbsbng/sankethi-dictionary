@@ -1,6 +1,13 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
 YUI.add('HeaderBinderIndex', function(Y, NAME) {
 
+    function turnOnMenu(node) {
+        node.addClass("on");
+    }
+
+    function turnOffMenu(node) {
+        node.removeClass("on");
+    }
 /**
  * The HeaderBinderIndex module.
  *
@@ -30,8 +37,22 @@ YUI.add('HeaderBinderIndex', function(Y, NAME) {
          * @param node {Node} The DOM node to which this mojit is attached.
          */
         bind: function(node) {
-            var me = this;
+            var me = this, menuEnable, menuDisable;
             this.node = node;
+
+            menuEnable = function(e) {
+                var menu = e.target;
+                menu.addClass("on");
+                menu.once("click", menuDisable);
+            };
+
+            menuDisable = function(e) {
+                var menu = e.target;
+                menu.removeClass("on");
+                menu.once("click", menuEnable);
+            };
+
+            node.all(".menu").once("click", menuEnable);
             /**
              * Example code for the bind method:
              *
