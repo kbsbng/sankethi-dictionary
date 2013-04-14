@@ -22,7 +22,7 @@ YUI.add('DisplayWord', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
-            var word, model, entryIndex, view, viewConf;
+            var word, model, type, viewConf;
 
             viewConf = {
                 "noun" : "displayNoun",
@@ -31,14 +31,16 @@ YUI.add('DisplayWord', function(Y, NAME) {
                 "adjective" : "displayAdj"
             };
             word = ac.params.getFromMerged("key");
-            entryIndex = ac.params.getFromMerged("entryIndex");
+            type = ac.params.getFromMerged("type");
             model = ac.models.get('DictionaryModel');
             Y.log("Searching for " + word, "debug");
             ac.assets.addCss('./index.css');
             model.searchWord(word, function(result) {
                 Y.log(result, "debug");
-                view = result.entries[entryIndex].type;
-                ac.done({word : result._id, entry : result.entries[entryIndex]}, viewConf[view]);
+                ac.done({
+                    word : result._id,
+                    entry : result[type]
+                }, viewConf[type]);
             }, function(err) {
                 Y.log(err, "error", NAME);
             });

@@ -22,8 +22,23 @@ YUI.add('AddWord', function (Y, NAME) {
          *        to the Mojito API.
          */
         index: function (ac) {
+            var word, model;
             ac.assets.addCss('./index.css');
-            ac.done({});
+            word = ac.params.getFromMerged("word");
+            model = ac.models.get('DictionaryModel');
+            if (word === undefined) {
+                ac.done({});
+                return;
+            }
+            model.searchWord(word, function(result) {
+                var type = ac.params.getFromMerged("type");
+                Y.log(result, "debug");
+                ac.done({
+                    word: result[type]
+                });
+            }, function(err) {
+                Y.log(err, "error", NAME);
+            });
         },
         addWord: function(ac) {
             Y.log(ac.params.getFromBody("newWord"), "warn", NAME);

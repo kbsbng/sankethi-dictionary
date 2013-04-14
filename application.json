@@ -65,6 +65,9 @@
                         "bottom": {
                             "js": ["/static/sankethidictionary/assets/js/pramukhime.js",
                                 "/static/sankethidictionary/assets/js/pramukhindic.js"]
+                        },
+                        "top": {
+                            "css": ["/static/sankethidictionary/assets/css/common.css"]
                         }
                     }
                 }
@@ -101,6 +104,9 @@
                         "bottom": {
                             "js": ["/static/sankethidictionary/assets/js/pramukhime.js",
                                 "/static/sankethidictionary/assets/js/pramukhindic.js"]
+                        },
+                        "top": {
+                            "css": ["/static/sankethidictionary/assets/css/common.css"]
                         }
                     }
                 }
@@ -132,6 +138,9 @@
                         "bottom": {
                             "js": ["/static/sankethidictionary/assets/js/pramukhime.js",
                                 "/static/sankethidictionary/assets/js/pramukhindic.js"]
+                        },
+                        "top": {
+                            "css": ["/static/sankethidictionary/assets/css/common.css"]
                         }
                     }
                 }
@@ -155,6 +164,11 @@
                                     "type": "Footer"
                                 }
                             }
+                        }
+                    },
+                    "assets": {
+                        "top": {
+                            "css": ["/static/sankethidictionary/assets/css/common.css"]
                         }
                     }
                 }

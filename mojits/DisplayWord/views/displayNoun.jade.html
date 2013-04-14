@@ -1,12 +1,12 @@
-div(id=meta.id)
+div(id=meta.id, class="display-word-page")
     h1 #{word}
-    h2 Type
-    p #{entry.type}
+    h2 #{entry.type}
     h2 Meanings
-    for meaning in entry.meanings
-        p meaning
+    ol
+        for meaning in entry.meanings
+            li #{meaning}
+    h2 Variations
     table(class="variations")
-        caption Variations
         tr
             th ವಿಭಕ್ತಿ
             th ಏಕ ವಚನ

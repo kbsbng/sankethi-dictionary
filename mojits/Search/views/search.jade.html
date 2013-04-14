@@ -7,16 +7,17 @@ div(id="search-result")
                     th Type
                     th Meaning
                     th Authors
-                each entry, j in match.entries
-                    tr
-                        td
-                            a(href="/word?key="+encodeURIComponent(match._id)+"&entryIndex="+j) #{match._id}
-                        td #{entry.type}
-                        td
-                            for meaning in entry.meanings
-                                p #{meaning}
-                        td
-                            each author in entry.authors
-                                | #{author}
+                each type in ["noun", "verb", "adjective", "pronoun"]
+                    if match[type]
+                        tr
+                            td
+                                a(href="/word?key="+encodeURIComponent(match._id)+"&type="+type) #{match._id}
+                            td #{type}
+                            td
+                                for meaning in match[type].meanings
+                                    p #{meaning}
+                            td
+                                each author in match[type].authors
+                                    | #{author}
         else
             | No matches found.

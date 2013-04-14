@@ -21,14 +21,14 @@ YUI.add('DictionaryModel', function (Y, NAME) {
         },
 
         addWord: function (word, successCb, failureCb) {
+            var entry = {};
+            entry[word.entry.type] = word.entry;
             mongo.dictionary.update(
                 {
                     "_id": word.word
                 },
                 {
-                    "$push": {
-                        entries: word.entry
-                    }
+                    "$set": entry
                 },
                 {
                     upsert: true
