@@ -69,6 +69,42 @@
                     }
                 }
             },
+            "searchResultPage": {
+                "type": "HTMLFrameMojit",
+                "config": {
+                    "deploy": true,
+                    "title": "Sankethi Dictionary - Search Result Page",
+                    "child": {
+                        "type": "SearchPage",
+                        "config": {
+                            "children": {
+                                "header": {
+                                    "type": "Header",
+                                    "action": "index"
+                                },
+                                "search": {
+                                    "type": "Search",
+                                    "action": "index"
+                                },
+                                "searchResult": {
+                                    "type": "Search",
+                                    "action": "search"
+                                },
+                                "footer": {
+                                    "type": "Footer",
+                                    "action": "index"
+                                }
+                            }
+                        }
+                    },
+                    "assets": {
+                        "bottom": {
+                            "js": ["/static/sankethidictionary/assets/js/pramukhime.js",
+                                "/static/sankethidictionary/assets/js/pramukhindic.js"]
+                        }
+                    }
+                }
+            },
             "addWordPage": {
                 "type": "HTMLFrameMojit",
                 "config": {

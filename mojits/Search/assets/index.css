@@ -2,3 +2,25 @@
     width: 100%;
     max-width: 360px;
 }
+
+#search-result table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+#search-result td, #search-result th {
+    border: solid 1px #00008b;
+}
+
+#search-result tr:nth-child(even) {
+    background-color: lightblue;
+}
+
+#search-result th {
+    background-color: mediumblue;
+    color: #ffffff;
+}
+
+#search-result p {
+    margin: 0.5em;
+}

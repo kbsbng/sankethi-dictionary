@@ -11,6 +11,7 @@ var nonLoginPatterns = [
     '^/static',
     '^/login',
     '^/search($|/)',
+    '^/search\?.*',
     '\.js$',
     '^/static/Search/.*',
     '^/word\?.*'

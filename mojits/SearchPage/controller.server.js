@@ -24,6 +24,11 @@ YUI.add('SearchPage', function (Y, NAME) {
         index: function (ac) {
             ac.assets.addCss('./index.css');
             ac.composite.done();
+        },
+
+        search: function(ac) {
+            ac.assets.addCss('./index.css');
+            ac.composite.done();
         }
 
     };

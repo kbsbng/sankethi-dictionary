@@ -9,14 +9,20 @@ dt {
 #header-bar {
     background-color: #00008b;
     width: 100%;
-    padding-top: 5px;
-    padding-bottom: 5px;
     text-align: right;
 }
 
+#header-bar > * {
+    padding: 0.5em 0;
+    display: inline-block;
+}
+
 #header-bar .user-name {
-    padding-right: 5px;
     color: #ffffff;
+}
+
+#header-bar .last {
+    margin-right: 1em;
 }
 
 #header-bar .add-word a, #header-bar .user-name a {
@@ -35,7 +41,7 @@ body {
 
 #header-bar .submenu {
     position: absolute;
-    top: 1.5em;
+    top: 2.1em;
     left: 0;
     width: 100%;
     text-align: left;
@@ -59,3 +65,11 @@ body {
     background: rgb(110, 110, 231);
 }
 
+.site-title {
+    text-align: center;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: black;
+}

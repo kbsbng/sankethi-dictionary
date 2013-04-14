@@ -1,19 +1,22 @@
-table(id=meta.id)
-    if matches[0]
-        each match, i in matches
-            tr
-                th Word
-                th Type
-                th Meaning
-                th Authors
-            each entry, j in match.entries
+div(id="search-result")
+    table(id=meta.id)
+        if matches[0]
+            each match, i in matches
                 tr
-                    td
-                        a(href="/word?key="+encodeURIComponent(match._id)+"&entryIndex="+j) #{match._id}
-                    td #{entry.type}
-                    td #{entry.meaning}
-                    td
-                        each author in entry.authors
-                            | #{author}
-    else
-        | No matches found.
+                    th Word
+                    th Type
+                    th Meaning
+                    th Authors
+                each entry, j in match.entries
+                    tr
+                        td
+                            a(href="/word?key="+encodeURIComponent(match._id)+"&entryIndex="+j) #{match._id}
+                        td #{entry.type}
+                        td
+                            for meaning in entry.meanings
+                                p #{meaning}
+                        td
+                            each author in entry.authors
+                                | #{author}
+        else
+            | No matches found.

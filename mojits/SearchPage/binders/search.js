@@ -1,16 +1,18 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('SearchBinderIndex', function(Y, NAME) {
+/*global PramukhIndic*/
+/*global pramukhIME*/
+YUI.add('SearchPageBinderIndex', function(Y, NAME) {
 
 /**
- * The SearchBinderIndex module.
+ * The SearchPageBinderIndex module.
  *
- * @module SearchBinderIndex
+ * @module SearchPageBinderIndex
  */
 
     /**
-     * Constructor for the SearchBinderIndex class.
+     * Constructor for the SearchPageBinderIndex class.
      *
-     * @class SearchBinderIndex
+     * @class SearchPageBinderIndex
      * @constructor
      */
     Y.namespace('mojito.binders')[NAME] = {
@@ -32,22 +34,10 @@ YUI.add('SearchBinderIndex', function(Y, NAME) {
         bind: function(node) {
             var me = this;
             this.node = node;
-            /*
-            node.one("#submit-button").on("click", function(e) {
-                console.log(node.one("input[name='key']").get("value"));
-                //console.log(me.mojitProxy);
-                me.mojitProxy.invoke("search", {
-                    params : {
-                        url : {
-                            key : node.one("input[name='key']").get("value")
-                        }
-                    }
-                }, function(error, markup) {
-                    console.log(markup);
-
-                    node.one("#search-result").set("innerHTML", markup);
-                });
-            });*/
+            window.onload = function() {
+                pramukhIME.addLanguage(PramukhIndic, "kannada");
+                pramukhIME.enable();
+            };
             /**
              * Example code for the bind method:
              *
@@ -67,4 +57,4 @@ YUI.add('SearchBinderIndex', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client', 'io']});
+}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client']});

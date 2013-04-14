@@ -8,7 +8,7 @@
     "search" : {
         "verbs" : ["get"],
         "path" : "/search",
-        "call" : "searchPage.index"
+        "call" : "searchResultPage.search"
     },
     "home" : {
         "verbs" : ["get"],
