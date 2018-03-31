@@ -1,1 +1,1 @@
-web: node server.js
+web: cd node_modules/mojito && npm install && cd ../.. && node server.js
