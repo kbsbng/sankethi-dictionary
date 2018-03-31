@@ -4,20 +4,22 @@
     "version": "0.0.1",
     "author": {
         "name": "Keshavaprasad B S",
-        "email": "kbsbng@yahoo.com"
+        "email": "kbsbng@gmail.com"
     },
     "contributors": [
-          {
-              "name": "Keshavaprasad B S",
-              "email": "kbsbng@yahoo.com"
-          }
+        {
+            "name": "Keshavaprasad B S",
+            "email": "kbsbng@gmail.com"
+        }
     ],
     "dependencies": {
-        "mojito": "0.5.6",
-        "connect-auth" : "0.5.x",
-        "connect" : "2.7.x",
-        "mongoskin" : "0.5.x",
-        "jade" : "0.28.x"
+        "body-parser": "^1.18.2",
+        "connect": "^2.7.11",
+        "connect-auth": "^0.5.4",
+        "express": "^3.21.2",
+        "jade": "^0.28.2",
+        "mojito": "^0.8.4",
+        "mongoskin": "^0.5.0"
     },
     "engines": {
         "node": "0.8.x"
