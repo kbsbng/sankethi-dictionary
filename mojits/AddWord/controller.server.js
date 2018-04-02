@@ -55,4 +55,4 @@ YUI.add('AddWord', function (Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'mojito-params-addon', "DictionaryModel", "sankethi-dictionary-util"]});
+}, '0.0.1', {requires: ['mojito', "mojito-config-addon", 'mojito-assets-addon', 'mojito-models-addon', 'mojito-params-addon', "DictionaryModel", "sankethi-dictionary-util"]});

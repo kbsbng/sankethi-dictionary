@@ -5,6 +5,32 @@
         "staticHandling": {
             "appName" : "sankethidictionary"
         },
+        "variationsConfig" :{
+            "noun" : {
+                "v" : {
+                    "displayName" : "ವಿಭಕ್ತಿ",
+                    "types" : {
+                        "1" : "ಪ್ರಥಮ",
+                        "2" : "ದ್ವಿತೇಯ",
+                        "3" : "ತ್ರಿತೀಯ",
+                        "4" : "ಚತುರ್ಥಿ",
+                        "5" : "ಪಂಚಮಿ",
+                        "6" : "ಷಷ್ಠಿ",
+                        "7" : "ಸಪ್ತಮಿ"
+                    }
+                }
+            },
+            "verb" : {
+                "pr" : {
+                    "displayName" : "ವರ್ತಮಾನ",
+                    "types" : {
+                        "1" : "ಪ್ರಥಮ ಪುರುಷ",
+                        "2" : "ಮಧ್ಯಮ ಪುರುಷ",
+                        "3" : "ಉತ್ತಮ ಪುರುಷ"
+                    }
+                }
+            }
+        },
         "middleware": [ "middleware/bodyParser.js",
             "middleware/cookieParser.js",
             "middleware/session.js",

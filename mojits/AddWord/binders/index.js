@@ -50,6 +50,7 @@ YUI.add('AddWordBinderIndex', function (Y, NAME) {
          * @param node {Node} The DOM node to which this mojit is attached.
          */
         bind: function (node) {
+            console.log(JSON.stringify(this.mojitProxy.config));
             var me = this, meanings = 1;
             this.node = node;
             node.one("#add-meaning").on('click', function () {
