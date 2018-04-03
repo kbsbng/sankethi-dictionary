@@ -18,7 +18,7 @@
         "connect-auth": "^0.5.4",
         "express": "^3.21.2",
         "jade": "^0.28.2",
-        "mojito": "^0.8.4",
+        "mojito": "~0.8",
         "mongoskin": "^0.5.0"
     },
     "engines": {

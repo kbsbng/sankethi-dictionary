@@ -2,7 +2,7 @@ YUI.add('sankethi-dictionary-mongo', function (Y) {
     "use strict";
     var mongo, db, dictionary, users;
     mongo = require('mongoskin');
-    db = mongo.db(process.env.MONGOHQ_URL || "mongodb://sanketidictionary:sanketidictionaryreadonly@ds047612.mlab.com:47612/heroku_vcjz23l3", {
+    db = mongo.db(process.env.MONGOHQ_URL || "mongodb://sanketidictionary:sanketidictionaryreadonly@ds231739.mlab.com:31739/heroku_6rcwvxcv", {
         safe: true
     });
     dictionary = db.collection("dictionary");
