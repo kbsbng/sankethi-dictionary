@@ -25,7 +25,7 @@ YUI.add('Login', function(Y, NAME) {
         index: function(ac) {
             var urlParsed, origUrl;
             urlParsed = url.parse(ac._adapter.req.originalUrl, true);
-            origUrl = urlParsed.query['orig-url'];
+            origUrl = urlParsed.query['originalUrl'];
             if (origUrl === undefined) {
                 origUrl = "/";
             }

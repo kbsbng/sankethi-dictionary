@@ -14,4 +14,6 @@ var app = Mojito.createServer();
 // server. Adjust below to match the requirements of your hosting environment.
 // ---------------------------------------------------------------------------
 
-module.exports = app.listen();
+module.exports = app.listen(null, null, () => {
+    if (process.send) process.send({status:"up", type: "status"});
+});

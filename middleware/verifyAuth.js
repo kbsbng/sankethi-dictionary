@@ -50,7 +50,7 @@ module.exports = function (req, res, next) {
                 return;
             }
             if (authenticated) {
-                res.writeHead(303, { 'Location': urlp.query['orig-url'] });
+                res.writeHead(303, { 'Location': urlp.query['originalUrl'] });
                 res.end('Redirecting');
                 //res.send("<html><h1>Hello Google user:" + JSON.stringify( req.getAuthDetails() ) + ".</h1></html>");
                 return;
@@ -70,7 +70,7 @@ module.exports = function (req, res, next) {
 
     if (!req.isAuthenticated()) {
         console.log("Not authenticated");
-        res.writeHead(303, { 'Location': "/login?orig-url=" + req.url });
+        res.writeHead(303, { 'Location': "/login?originalUrl=" + req.url });
         res.end('Redirecting to login page');
         return;
     }
