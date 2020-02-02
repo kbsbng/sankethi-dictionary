@@ -6,7 +6,7 @@ process.chdir(__dirname);
  * Create the MojitoServer instance we'll interact with. Options can be passed
  * using an object with the desired key/value pairs.
  */
-var Mojito = require('mojito');
+var Mojito = require('../multisocialshare/lib/mojito');
 var app = Mojito.createServer();
 
 // ---------------------------------------------------------------------------
